@@ -9,7 +9,7 @@ defmodule BoilerplateWeb.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      BoilerplateWeb.Endpoint,
+      BoilerplateWeb.Endpoint
       # Starts a worker by calling: BoilerplateWeb.Worker.start_link(arg)
       # {BoilerplateWeb.Worker, arg},
     ]
