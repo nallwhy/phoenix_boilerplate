@@ -30,7 +30,8 @@ defmodule Boilerplate.Umbrella.MixProject do
   # and cannot be accessed from applications inside the apps folder
   defp deps do
     [
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:distillery, "~> 2.0", runtime: false}
     ]
   end
 end
