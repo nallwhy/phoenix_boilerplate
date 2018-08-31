@@ -6,6 +6,10 @@ defmodule Boilerplate.Umbrella.MixProject do
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      dialyzer: [
+        plt_add_deps: :transitive,
+        ignore_warnings: ".dialyzer_ignore.exs"
+      ],
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -30,6 +34,7 @@ defmodule Boilerplate.Umbrella.MixProject do
   # and cannot be accessed from applications inside the apps folder
   defp deps do
     [
+      {:dialyxir, "~> 1.0.0-rc.3", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:distillery, "~> 2.0", runtime: false}
     ]
